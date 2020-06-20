@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_gonzaga_sales_sale_group,access_gonzaga_sales_sale_group,model_gonzaga_sale,gonzaga_sales.group_user,1,1,1,1
+access_gonzaga_sales_sale_item_group,access_gonzaga_sales_sale_item_group,model_gonzaga_sale_item,base.group_user,1,1,1,1
+
+access_gonzaga_sales_sale_group,access_gonzaga_sales_sale_group,model_gonzaga_sale,base.group_system,1,1,1,1
+access_gonzaga_sales_sale_item_group,access_gonzaga_sales_sale_item_group,model_gonzaga_sale_item,base.group_system,1,1,1,1

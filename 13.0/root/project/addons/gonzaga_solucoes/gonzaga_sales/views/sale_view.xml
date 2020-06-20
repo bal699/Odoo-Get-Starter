@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- BLOCK : Sale -->
+
+        <!-- Search -->
+        <record id="view_search_gonzaga_sale" model="ir.ui.view">
+            <field name="name">Vendas</field>
+            <field name="model">gonzaga.sale</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id"/>
+                    <field name="sale_date"/>
+                    <field name="payment_condition"/>
+                    <field name="partner_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tree -->
+        <record id="view_tree_gonzaga_sale" model="ir.ui.view">
+            <field name="name">Vendas</field>
+            <field name="model">gonzaga.sale</field>
+            <field name="arch" type="xml">
+                <tree string="Brand">
+                    <field name="id"/>
+                    <field name="sale_date"/>
+                    <field name="payment_condition"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form -->
+        <record id="view_form_gonzaga_sale" model="ir.ui.view">
+            <field name="name">Vendas</field>
+            <field name="model">gonzaga.sale</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id"/>
+                            <field name="sale_date"/>
+                            <field name="payment_condition"/>
+                            <field name="partner_id"/>
+                            <field name="sale_items">
+                                <tree create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="product_code" />
+                                    <field name="description" />
+                                    <field name="price" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Actions -->
+        <record model="ir.actions.act_window" id="action_gonzaga_sale">
+            <field name="name">Vendas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gonzaga.sale</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="view_search_gonzaga_sale"/>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+            <field name="limit">50</field>
+        </record>
+        <record id="action_gonzaga_sale_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tree_gonzaga_sale"/>
+            <field name="act_window_id" ref="action_gonzaga_sale"/>
+        </record>
+        <record id="action_gonzaga_sale_form_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_gonzaga_sale"/>
+            <field name="act_window_id" ref="action_gonzaga_sale"/>
+        </record>
+
+        <!-- END BLOCK : Sale -->
+
+    </data>
+</openerp>

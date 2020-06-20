@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+      <!-- BLOCK : MENU -->
+
+      <!-- Main Menu -->
+      <menuitem id="menu_gonzaga_sales"
+                  name="Gonzaga Vendas"
+                  parent=""
+                  sequence="3"
+                  web_icon="gonzaga_sales,static/description/icon.png"
+                  groups="base.group_user,base.group_system" />
+
+            <!-- Register -->
+            <menuitem id="menu_gonzaga_sales_register"
+                  name="Cadastros"
+                  parent="menu_gonzaga_sales"
+                  sequence="1"
+                  groups="base.group_user,base.group_system"/>
+
+                  <!-- Vendas -->
+                  <menuitem id="menu_gonzaga_sales_register_general_sales"
+                              name="Vendas"
+                              parent="menu_gonzaga_sales_register"
+                              sequence="1"
+                              action="action_gonzaga_sale"
+                              groups="base.group_user,base.group_system" />
+
+            <!-- END : Register -->
+
+      <!-- END BLOCK : MENU -->
+
+    </data>
+</openerp>
